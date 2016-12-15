@@ -19,11 +19,48 @@ update :: Action -> State -> State
 update NoAction state = state
 
 
+scoresView :: Html Action
+scoresView =
+  H.table
+    []
+    [ H.thead []
+        [
+          H.th []
+          [
+            H.td [] [H.text "Categories"]
+          ]
+        ]
+    , H.tbody []
+      [ H.tr [] [ H.td [] [ H.text "Aces"] ]
+      , H.tr [] [ H.td [] [ H.text "Twos"] ]
+      , H.tr [] [ H.td [] [ H.text "Threes"] ]
+      , H.tr [] [ H.td [] [ H.text "Fours"] ]
+      , H.tr [] [ H.td [] [ H.text "Fives"] ]
+      , H.tr [] [ H.td [] [ H.text "Sixes"] ]
+      , H.tr [] [ H.td [] [ H.text "Bonus"] ]
+      ]
+    , H.tbody []
+      [ H.tr [] [ H.td [] [ H.text "Three of a kind"] ]
+      , H.tr [] [ H.td [] [ H.text "Four of a kind"] ]
+      , H.tr [] [ H.td [] [ H.text "Full house"] ]
+      , H.tr [] [ H.td [] [ H.text "Small straight"] ]
+      , H.tr [] [ H.td [] [ H.text "Large straight"] ]
+      , H.tr [] [ H.td [] [ H.text "Kniffel"] ]
+      , H.tr [] [ H.td [] [ H.text "Chance"] ]
+      ]
+    , H.tfoot []
+      [ H.tr [] [ H.td [] [ H.text "Total upper"] ]
+      , H.tr [] [ H.td [] [ H.text "Total lower"] ]
+      , H.tr [] [ H.td [] [ H.text "Total"] ]
+      ]
+    ]
+
 view :: State -> Html Action
 view state =
   H.div
     []
-    [ H.text "Hello Kniffel"
+    [ H.h2 [] [ H.text "Kniffel" ]
+    , scoresView
     ]
 
 
@@ -37,3 +74,4 @@ main = do
     }
 
   renderToDOM "#app" app.html
+
