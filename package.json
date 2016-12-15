@@ -1,0 +1,22 @@
+{
+  "name": "kniffel-pur",
+  "version": "0.1.0",
+  "description": "Kniffel in PureScript",
+  "main": "kniffel.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carsten Koenig",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/CarstenKoenig/kniffel-purs.git"
+  }
+}

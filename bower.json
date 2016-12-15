@@ -1,0 +1,13 @@
+{
+  "name": "kniffel-pur",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-pux": "^7.0.0"
+  },
+  "devDependencies": {}
+}
