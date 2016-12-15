@@ -2,4 +2,4 @@
 
 Kniffel in PureScript
 
-Try it out [here](./static/index.html) (soonish ...)
+Try it out [here](https://carstenkoenig.github.io/kniffel-purs/static/index.html) (soonish ...)
