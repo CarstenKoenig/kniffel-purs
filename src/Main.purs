@@ -2,6 +2,7 @@ module Main where
 
 import Prelude
 import Pux.Html as H
+import Pux.Html.Attributes as A
 import Control.Monad.Eff (Eff)
 import Control.Monad.Eff.Console (CONSOLE)
 import Pux (CoreEffects, renderToDOM, fromSimple, start)
@@ -22,12 +23,12 @@ update NoAction state = state
 scoresView :: Html Action
 scoresView =
   H.table
-    []
+    [ A.className "table table-bordered table-hover" ]
     [ H.thead []
         [
-          H.th []
+          H.tr []
           [
-            H.td [] [H.text "Categories"]
+            H.th [] [H.text "Categories"]
           ]
         ]
     , H.tbody []
@@ -48,7 +49,7 @@ scoresView =
       , H.tr [] [ H.td [] [ H.text "Kniffel"] ]
       , H.tr [] [ H.td [] [ H.text "Chance"] ]
       ]
-    , H.tfoot []
+    , H.tbody []
       [ H.tr [] [ H.td [] [ H.text "Total upper"] ]
       , H.tr [] [ H.td [] [ H.text "Total lower"] ]
       , H.tr [] [ H.td [] [ H.text "Total"] ]
@@ -57,10 +58,11 @@ scoresView =
 
 view :: State -> Html Action
 view state =
-  H.div
-    []
-    [ H.h2 [] [ H.text "Kniffel" ]
-    , scoresView
+  H.div [ A.className "container"]
+    [ H.div [ A.className "row"] 
+      [ H.h2 [] [ H.text "Kniffel" ]
+      , scoresView
+      ]
     ]
 
 
